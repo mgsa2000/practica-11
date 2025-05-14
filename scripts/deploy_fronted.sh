@@ -48,7 +48,7 @@ wp option update whl_page "$WORDPRESS_HIDE_LOGIN_URL" --path=$WORDPRESS_DIRECTOR
 cp ../htaccess/.htaccess $WORDPRESS_DIRECTORY
 
 # Configuramos la variable $_SERVER['HTTPS'] , para que cargen las hojas de estilo CSS
-sed -i "/COLLATE/a \$_SERVER['HTTPS'] = 'on';" /var/www/html/wp-config.php
+ sed -i "/COLLATE/a \$_SERVER['HTTPS'] = 'on';" /var/www/html/wp-config.php
 
 # Cambiamos los permisos de root a www-data
-chown www-data:www-data /var/www/html/*
+chown -R www-data:www-data /var/www/html/*
